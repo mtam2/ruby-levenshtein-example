@@ -11,10 +11,12 @@ module Integration
       }
     end
 
-    def get_people
+    def get_people(page_size: 100, page: 1)
       path = "/v2/people.json"
       params = {
-        per_page: 100,
+        per_page: page_size,
+        page: page,
+        include_paging_counts: true,
       }
       response = self.class.send(
         :get,
