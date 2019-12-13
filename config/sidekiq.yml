@@ -1,12 +1,12 @@
 # Scheduler
 :dynamic: true
-:concurrency: 10
+:concurrency: 32
 :pool: 25
 development:
   :verbose: false
   :pidfile: ./tmp/pids/sidekiq.pid
   :logfile: ./log/sidekiq.log
-  :concurrency:  10
+  :concurrency:  32
 staging:
   :verbose: false
   :pidfile: ./tmp/pids/sidekiq.pid
