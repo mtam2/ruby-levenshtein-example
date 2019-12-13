@@ -1,0 +1,11 @@
+- if @characters.present?
+  %table.center
+    %thead
+      %tr
+        %th Character
+        %th Count
+    %tbody
+      - @characters.each do |char|
+        %tr
+          %td= char["chars"]
+          %td= char["count"]

@@ -14,7 +14,7 @@ module Integration
     def get_people
       path = "/v2/people.json"
       params = {
-        per_page: 1,
+        per_page: 100,
       }
       response = self.class.send(
         :get,

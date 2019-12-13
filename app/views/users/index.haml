@@ -1,0 +1,17 @@
+- if @users.present?
+  %table.center
+    %thead
+      %tr
+        %th First Name
+        %th Last Name
+        %th Display Name
+        %th Email
+        %th Title
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user["first_name"]
+          %td= user["last_name"]
+          %td= user["display_name"]
+          %td= user["email"]
+          %td= user["title"]

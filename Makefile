@@ -6,7 +6,8 @@ setup:
 	rake db:reset
 	touch .env
 	printf "API_ENDPOINT='XXXX'\nAPI_KEY='XXXX'\n" >> .env
-
+	rake assets:precompile
+	
 server:
 	rails s
 

@@ -1,0 +1,14 @@
+- if @distances.present?
+  - if @distances[:levenshtein_distances].present?
+    %table.center
+      %thead
+        %tr
+          %th Email 1
+          %th Email 2
+          %th Levenshtein Distance
+      %tbody
+        - @distances[:levenshtein_distances].each do |distance|
+          %tr
+            %td= distance["email_1"]
+            %td= distance["email_2"]
+            %td= distance["levenshtein_distance"]
