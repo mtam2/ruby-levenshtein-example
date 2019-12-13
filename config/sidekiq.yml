@@ -1,0 +1,25 @@
+# Scheduler
+:dynamic: true
+:concurrency: 10
+:pool: 25
+development:
+  :verbose: false
+  :pidfile: ./tmp/pids/sidekiq.pid
+  :logfile: ./log/sidekiq.log
+  :concurrency:  10
+staging:
+  :verbose: false
+  :pidfile: ./tmp/pids/sidekiq.pid
+  :logfile: ./log/sidekiq.log
+  :concurrency:  10
+production:
+  :verbose: false
+  :pidfile: ./tmp/pids/sidekiq.pid
+  :logfile: ./log/sidekiq.log
+  :concurrency:  10
+#queue weighting is defined in the systemd configs for the workers on the server
+:queues:
+  - ["critical", 10]
+  - ["high", 7]
+  - ["medium", 5]
+  - ["low", 1]

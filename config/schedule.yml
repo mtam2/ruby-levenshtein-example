@@ -1,0 +1,5 @@
+upsert_salesloft_users:
+  cron: '0 8 * * *'
+  class: Integration::UpsertSalesloftUsersJob
+  queue: high
+  description: 'Upserts Salesloft people into users table'
