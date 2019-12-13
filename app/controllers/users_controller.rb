@@ -20,7 +20,11 @@ class UsersController < ApplicationController
   end
 
   def refresh_data
-    Integration::UpsertSalesloftUsersJob.new.perform
+    begin
+      Integration::UpsertSalesloftUsersJob.new.perform
+    rescue => e
+      # TODO: Implement error notification
+    end
     redirect_to action: :index
   end
 end

@@ -8,6 +8,7 @@ module Integration
 
     def upsert_users
       response = api.get_people
+      raise "Invalid API call. #{response.to_s}" if response.class != Hash
       users = []
       response["data"].each do |raw_user|
         user = {

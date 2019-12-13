@@ -4,7 +4,7 @@ module Integration
     sidekiq_options queue: :high, retry: 0, backtrace: true
 
     def perform
-      Integration::SalesloftService.new.upsert_users
+      response = Integration::SalesloftService.new.upsert_users
     end
   end
 end
