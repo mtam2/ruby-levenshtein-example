@@ -3,3 +3,9 @@ upsert_salesloft_users:
   class: Integration::UpsertSalesloftUsersJob
   queue: high
   description: 'Upserts Salesloft people into users table'
+
+calculate_levenshtein_distances:
+  cron: '0 9 * * *'
+  class: UpsertSimilarEmailsJob
+  queue: high
+  description: 'Calculate levenshtein distances into similar_emails table'

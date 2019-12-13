@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email_1: one
+  email_2: one
+  levenshtein_distance: 1
+  damerau_levenshtein_distance: 1
+
+two:
+  email_1: two
+  email_2: two
+  levenshtein_distance: 1
+  damerau_levenshtein_distance: 1

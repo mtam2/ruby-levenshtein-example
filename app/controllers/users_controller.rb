@@ -12,11 +12,11 @@ class UsersController < ApplicationController
   end
 
   def email_character_frequency
-    @characters = Integration::SalesloftService.new.calculate_frequency
+    @characters = User.calculate_frequency
   end
 
   def possible_duplicate_emails
-    @distances = Integration::SalesloftService.new.possible_duplicate_emails
+    @distances = User.possible_duplicate_emails
   end
 
   def refresh_data
