@@ -9,12 +9,17 @@ postgres >= 9.3
 # Application Setup
 1. Clone this repo
 2. Run `make setup`
-3. Run `make server`
-4. Navigate to `localhost:3000`
+3. Modify the .env file with your credentials
+4. Run `make server`
+5. Navigate to `localhost:3000`
 
 # Devleopment Setup
-`rails new ruby-levenshtein-example --database=postgresql --skip-action-mailer --skip-action-mailbox`
-`rake db:setup`
+```
+rails new ruby-levenshtein-example --database=postgresql --skip-action-mailer --skip-action-mailbox
+rake db:setup
+rails generate rspec:install
+rails g model users first_name:text last_name:text display_name:text email:text title:text ss_data:jsonb
+```
 
 # Testing
 1. Run `make test`
