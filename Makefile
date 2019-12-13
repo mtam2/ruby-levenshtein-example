@@ -7,7 +7,11 @@ setup:
 	touch .env
 	printf "API_ENDPOINT='XXXX'\nAPI_KEY='XXXX'\n" >> .env
 	rake assets:precompile
-	
+
+calculate_dld:
+	rake upsert_similar_emails:trigger
+	sidekiq
+
 server:
 	rails s
 

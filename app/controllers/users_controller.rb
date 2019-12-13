@@ -16,13 +16,14 @@ class UsersController < ApplicationController
   end
 
   def possible_duplicate_emails
-    @distances = User.possible_duplicate_emails
+    @distances = User.possible_duplicate_emails(quick_calc: params[:quick_calc].blank?)
   end
 
   def refresh_data
     begin
       Integration::UpsertSalesloftUsersJob.new.perform
     rescue => e
+      puts e
       # TODO: Implement error notification
     end
     redirect_to action: :index
