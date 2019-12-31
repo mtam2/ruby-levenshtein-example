@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   get 'users/email_character_frequency', to: 'users#email_character_frequency'
   get 'users/possible_duplicate_emails', to: 'users#possible_duplicate_emails'
   post 'users/refresh_data', to: 'users#refresh_data'
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   match '*unmatched_route', to: 'users#index', via: :all
 end
