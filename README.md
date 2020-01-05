@@ -26,7 +26,7 @@ Optional:
 3. Find more string matching algorithms
 
 # Testing
-~~1. Run `make test`~~
+1. Run `make test`
 
 Warning: Currently using beta `gem 'rspec-rails', '~> 4.0.0.beta3'` due to bug listed here: https://stackoverflow.com/questions/58581334/generated-rspec-controller-test-is-failing-with-wrong-number-of-arguments-given
 
